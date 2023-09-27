@@ -24,7 +24,7 @@ function setupEventListeners() {
   const todoTimeInput = document.querySelector(".todo-time-input");
   const timegeneral = new Date();
   const day_list = ['日', '一', '二', '三', '四', '五', '六'];
-  todoTimeInput.innerText = timegeneral.getFullYear() + "." + (('0'+(timegeneral.getMonth() + 1)).slice(-2)) + "." + (('0'+(timegeneral.getDate() + 1)).slice(-2))+ " ("+ day_list[timegeneral.getDay()]+")";
+  todoTimeInput.innerText = timegeneral.getFullYear() + "." + (('0'+(timegeneral.getMonth() + 1)).slice(-2)) + "." + (('0'+timegeneral.getDate()).slice(-2))+ " ("+ day_list[timegeneral.getDay()]+")";
   const todoTagInput = document.querySelector('input[list="todo-tag-input"]');
   const todoMoodInput = document.querySelector('input[list="todo-mood-input"]');
   const todoDescriptionInput = document.querySelector("#todo-description-input");
