@@ -19,7 +19,6 @@ Start by copying the `.env.example` file to `.env`.
 ```bash
 cd backend
 cp .env.example .env
-nano .env
 ```
 
 `.env`
