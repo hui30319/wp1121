@@ -21,6 +21,10 @@ function setupEventListeners() {
   const todoBlank = document.querySelector("#todo-blank");
   const todoClose = document.querySelector("#todo-close");
   const todoSave = document.querySelector("#todo-save");
+  const todoTimeInput = document.querySelector(".todo-time-input");
+  const timegeneral = new Date();
+  const day_list = ['日', '一', '二', '三', '四', '五', '六'];
+  todoTimeInput.innerText = timegeneral.getFullYear() + "." + (('0'+(timegeneral.getMonth() + 1)).slice(-2)) + "." + (('0'+(timegeneral.getDate() + 1)).slice(-2))+ " ("+ day_list[timegeneral.getDay()]+")";
   const todoTagInput = document.querySelector('input[list="todo-tag-input"]');
   const todoMoodInput = document.querySelector('input[list="todo-mood-input"]');
   const todoDescriptionInput = document.querySelector("#todo-description-input");
@@ -36,9 +40,9 @@ function setupEventListeners() {
     const tag = todoTagInput.value;
     const mood = todoMoodInput.value;
     const description = todoDescriptionInput.value;
-    const timegeneral = new Date();
-    const day_list = ['日', '一', '二', '三', '四', '五', '六']
-    const time = timegeneral.getFullYear() + "." + (timegeneral.getMonth() + 1) + "." + timegeneral.getDate()+ " ("+ day_list[timegeneral.getDay()]+")";
+    // const timegeneral = new Date();
+    // const day_list = ['日', '一', '二', '三', '四', '五', '六'];
+    const time = todoTimeInput.innerText;//timegeneral.getFullYear() + "." + (('0'+(timegeneral.getMonth() + 1)).slice(-2)) + "." + (('0'+(timegeneral.getDate() + 1)).slice(-2))+ " ("+ day_list[timegeneral.getDay()]+")";
 
     if (!description) {
       alert("Please enter description!");
@@ -46,7 +50,7 @@ function setupEventListeners() {
     }
     try {
       const todo = await createTodo({ time, tag, mood, description });
-      console.log(todo);
+      // console.log(todo);
       renderTodo(todo);
       todoBlank.close();
     } catch (error) {
@@ -133,7 +137,7 @@ function createTodoElement(todo) {
     todo.tag = tagEdit.value;
     todo.mood = moodEdit.value;
     todo.description = textareaEdit.value;
-    console.log(todo);
+    // console.log(todo);
     updateTodoStatus(todo.id, todo);
   });
 
@@ -148,8 +152,8 @@ function createTodoElement(todo) {
     buttonClose.style.display = "none";
     buttonEdit.style.display = "block";
     buttonDelete.style.display = "block";
-    console.log(todo.id);
-    console.log(document.getElementById(todo.id));
+    // console.log(todo.id);
+    // console.log(document.getElementById(todo.id));
   });
 
   buttonDelete.addEventListener("click", async () => {

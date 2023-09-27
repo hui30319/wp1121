@@ -76,7 +76,7 @@ export const updateTodo = async (req, res) => {
 // Delete a todo
 export const deleteTodo = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  // console.log(id);
   try {
     // Check if the id is valid
     const existedTodo = await TodoModel.findById(id);
