@@ -46,7 +46,8 @@ export const createTodo = async (req, res) => {
 export const updateTodo = async (req, res) => {
   const { id } = req.params;
   // console.log(id);
-  const { title, description, completed } = req.body;
+  // const { title, description, completed } = req.body;
+  const { time, tag, mood, description } = req.body;
 
   try {
     // Check if the id is valid
@@ -56,9 +57,14 @@ export const updateTodo = async (req, res) => {
     }
 
     // Update the todo
-    if (title !== undefined) existedTodo.title = title;
+    // if (title !== undefined) existedTodo.title = title;
+    // if (time!== undefined) existedTodo.time = time;
+    if (time !== undefined) existedTodo.time = time;
+    if (tag !== undefined) existedTodo.tag = tag;
+    if (mood!== undefined) existedTodo.mood = mood;
     if (description !== undefined) existedTodo.description = description;
-    if (completed !== undefined) existedTodo.completed = completed;
+   
+    // if (completed !== undefined) existedTodo.completed = completed;
 
     // Save the updated todo
     await existedTodo.save();
