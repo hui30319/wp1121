@@ -3,13 +3,17 @@ import reactLogo from '../assets/react.svg'
 // import reactLogo from '../assets/react.svg'
 // import AddIcon from "@mui/icons-material/Add";
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import Stack from '@mui/material/Stack';
+import Link from '@mui/material/Link';
 import Typography from "@mui/material/Typography";
 import CloseIcon from '@mui/icons-material/Close';
 import FormGroup from '@mui/material/FormGroup';
@@ -233,6 +237,17 @@ export default function CardListDialog({ id, name, description, cards, open, onC
           </Button>
         </div>
         <br></br>
+        <Paper className="flex w-full flex-col p-2" elevation={6}>
+          <Stack direction="row" justifyContent="space-between" width={"90%"}>
+            {/* <tr className="flex w-full p-1">
+              <td>{song}</td>
+              <td>{singer}</td>
+            </tr> */}
+            <Typography>Song</Typography>
+            <Typography>Singer</Typography>
+            <Typography>Link</Typography>
+          </Stack>
+        </Paper>
         <Divider variant="middle" sx={{ mt: 1, mb: 2 }} />
         <div className="flex flex-col gap-4">
           {cards.map((card) => (
@@ -245,6 +260,7 @@ export default function CardListDialog({ id, name, description, cards, open, onC
         variant="new"
         open={openNewCardDialog}
         onClose={() => setOpenNewCardDialog(false)}
+        // onOpen={() => setOpenNewCardDialog(true)}
         listId={id}
       />
     </>
