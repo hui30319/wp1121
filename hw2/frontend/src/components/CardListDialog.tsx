@@ -1,8 +1,8 @@
-import { useRef, useState, forwardRef } from "react";
+import { useRef, useState } from "react";
 import reactLogo from '../assets/react.svg'
 // import reactLogo from '../assets/react.svg'
 // import AddIcon from "@mui/icons-material/Add";
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+// import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
@@ -13,25 +13,26 @@ import Input from "@mui/material/Input";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Stack from '@mui/material/Stack';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Typography from "@mui/material/Typography";
 import CloseIcon from '@mui/icons-material/Close';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
+// import FormGroup from '@mui/material/FormGroup';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
+// import TextField from '@mui/material/TextField';
 // import Paper from "@mui/material/Paper";
 
 import Dialog from "@mui/material/Dialog";
 
 
 import useCards from "@/hooks/useCards";
-import { deleteList, updateList } from "@/utils/client";
+// import { deleteList, updateList } from "@/utils/client";
+import { updateList } from "@/utils/client";
 
 import Card from "./Card";
 import type { CardProps } from "./Card";
 import CardDialog from "./CardDialog";
-import { CheckBox, NestCamWiredStand } from "@mui/icons-material";
+// import { CheckBox, NestCamWiredStand } from "@mui/icons-material";
 
 export type CardListProps = {
   id: string;
@@ -40,10 +41,10 @@ export type CardListProps = {
   cards: CardProps[];
 };
 
-type BoxCheck = {
-  isChecked: boolean;
-}
-type BoxListPropss = CardListProps & BoxCheck;
+// type BoxCheck = {
+//   isChecked: boolean;
+// }
+// type BoxListPropss = CardListProps & BoxCheck;
 
 type CardListDialogProps = {
   open: boolean;

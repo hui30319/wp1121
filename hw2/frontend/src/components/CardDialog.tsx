@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 
 import { Delete as DeleteIcon } from "@mui/icons-material";
-import { Paper } from "@mui/material";
-import Stack from '@mui/material/Stack';
+// import { Paper } from "@mui/material";
+// import Stack from '@mui/material/Stack';
 import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Dialog from "@mui/material/Dialog";
@@ -11,8 +11,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
+// import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 
 import useCards from "@/hooks/useCards";
@@ -184,11 +184,11 @@ export default function CardDialog(props: CardDialogProps) {
             </MenuItem>
           ))}
         </Select> */}
-        {/* {variant === "edit" && (
+        {variant === "edit" && (
           <IconButton color="error" onClick={handleDelete}>
             <DeleteIcon />
           </IconButton>
-        )} */}
+        )}
       </DialogTitle>
       {/* <DialogContent className="w-[600px]"> */}
       <DialogContent className="flex gap-4">

@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-// import { useState } from "react";
+// import { useRef, useState } from "react";
+import { useState } from "react";
 import reactLogo from '../assets/react.svg'
 // import AddIcon from "@mui/icons-material/Add";
 // import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
@@ -15,11 +15,11 @@ import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 
 import useCards from "@/hooks/useCards";
 import CardListDialog from "@/components/CardListDialog";
-import { deleteList, updateList } from "@/utils/client";
-
-import Card from "./Card";
+// import { deleteList, updateList } from "@/utils/client";
+import { deleteList } from "@/utils/client";
+// import Card from "./Card";
 import type { CardProps } from "./Card";
-import CardDialog from "./CardDialog";
+// import CardDialog from "./CardDialog";
 
 export type CardListProps = {
   id: string;
@@ -40,15 +40,15 @@ type AssembleProps = CardListProps & DeleteDoneBotton;
 
 // export default function CardList({ id, name, cards, del }: CardListPropss) {
 // export default function CardList({ id, name, cards }: CardListProps, del: boolean) {
-export default function CardList({ id, name, description, cards, done, onDone }: AssembleProps) {
+export default function CardList({ id, name, description, cards, done }: AssembleProps) {
   // console.log(del);  
   // const { id, name, cards, done, onDone } = props;
   // console.log(cards.length);
   const [cardListDialogOpen, setCardListDialogOpen] = useState(false);
-  const [openNewCardDialog, setOpenNewCardDialog] = useState(false);
-  const [editingName, setEditingName] = useState(false);
+  // const [openNewCardDialog, setOpenNewCardDialog] = useState(false);
+  // const [editingName, setEditingName] = useState(false);
   const { fetchLists } = useCards();
-  const inputRef = useRef<HTMLInputElement>(null);
+  // const inputRef = useRef<HTMLInputElement>(null);
   // const handleUpdateName = async () => {
   //   if (!inputRef.current) return;
 
