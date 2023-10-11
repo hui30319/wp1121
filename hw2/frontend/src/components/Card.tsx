@@ -41,7 +41,7 @@ export default function Card({ id, song, singer, link, listId }: CardProps) {
             </tr> */}
             <Typography>{song}</Typography>
             <Typography >{singer}</Typography>
-            <Link  href={link}>{link}</Link>
+            <Link  href={link} target="_blank">{link}</Link>
           </Stack>
         </Paper>
       </button>
