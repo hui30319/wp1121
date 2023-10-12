@@ -31,7 +31,7 @@ export const UserProvider = ({ children }: PropsWithChildren) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
-
+  console.log(location.pathname);
   /* TODO 1.2: Redirect to Login Page (5%) */
   /* Add a useEffect hook that redirects the user to the login page if they are not authenticated. */
   /* Only redirect if the user is not on the login or register page. */
@@ -42,11 +42,11 @@ export const UserProvider = ({ children }: PropsWithChildren) => {
 
   /* Reminder: Don't import this useEffect hook if you are tired of being redirected to the login page. */
   /* Warning: But remember to add it back before submitting your work. */
-  // useEffect(() => {
-  //   if (!authenticated) {
-  //     navigate('/login');
-  //   }
-  // }, [location]);
+  useEffect(() => {
+    if (location.pathname !== ("/login" || "/register")) {
+      navigate('/login');
+    }
+  }, []);
   /* End of TODO 1.2 */
 
   const login = async (username: string, password: string) => {
