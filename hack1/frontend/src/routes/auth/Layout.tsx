@@ -116,8 +116,9 @@ const AuthLayout = () => {
                 name="username"
                 autoComplete="username"
                 value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter Username"
-                required={true}
+                required
               />
               {/* End of TODO 1.4 */}
             </div>
@@ -135,8 +136,9 @@ const AuthLayout = () => {
                 name="password"
                 autoComplete="current-password"
                 value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password"
-                required={true}
+                required
               />
               {/* End of TODO 1.4 */}
             </div>
