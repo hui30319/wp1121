@@ -14,8 +14,8 @@ import { titlesTable } from "@/db/schema";
 const postTitleRequestSchema = z.object({
   username: z.string().min(1).max(50),
   title: z.string().min(1).max(280),
-  titleFromTime: z.string(),
-  titleToTime: z.string(),
+  titleFromTime: z.string().optional(),
+  titleToTime: z.string().optional(),
   replyToTitleId: z.number().optional(),
 });
 

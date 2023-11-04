@@ -31,7 +31,7 @@ export default function Title({
   participated,
 }: TitleProps) {
   return (
-    <>
+      <>
       <Link
         className="w-full px-4 pt-3 transition-colors hover:bg-gray-50 items-center"
         href={{
@@ -41,31 +41,17 @@ export default function Title({
           },
         }}
       >
-        <div className="flex gap-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          {/* <img
-            src={getAvatar(authorName)}
-            alt="avatar"
-            className="h-12 w-12 rounded-full"
-          /> */} 
-          <div className="flex grow rounded-md bg-gray-200 h-fit justify-between">
-            <p className="my-2.5 mx-5 whitespace-pre-wrap font-bold inline-flex">{title}</p>
-            <div className="flex mx-8">
-              {participated &&
-                <Check className="my-2.5 mx-5 text-green-500"/>
-              }
-              <p className="my-2.5 text-right">{participates}人參加</p>
-            </div>
-            {/* <div className="my-2 flex items-center justify-between gap-4 text-gray-400">
-              <ParticipateButton
-                initialParticipates={participates}
-                initialParticipated={participated}
-                titleId={id}
-                username={username}
-              />
-            </div> */}
+      {/* <div className="flex gap-4"> */}
+        <div className="flex gap-4 grow rounded-md bg-gray-200 h-fit justify-between">
+          <p className="my-2.5 mx-5 whitespace-pre-wrap font-bold inline-flex">{title}</p>
+          <div className="flex mx-8">
+            {participated &&
+              <Check className="my-2.5 mx-5 text-green-500"/>
+            }
+            <p className="my-2.5 text-right">{participates}人參加</p>
           </div>
         </div>
+      {/* </div> */}
       </Link>
       {/* <Separator /> */}
     </>

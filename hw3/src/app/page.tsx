@@ -13,7 +13,6 @@ import { participatesTable, titlesTable, usersTable } from "@/db/schema";
 // import UsernameDialog from "@/components/UsernameButton";
 
 
-
 type HomePageProps = {
   searchParams: {
     username?: string;
@@ -139,6 +138,14 @@ export default async function Home({
     .leftJoin(participatedSubquery, eq(titlesTable.id, participatedSubquery.titleId))
     .execute();
 
+    // const titleName = titles.map((title) => title.title);
+    // let newTitles:string[] = titleName;
+    // newTitles = [""];
+    // for (let i = 0; i < titleName.length; i++) {
+    //   if (titleName[i].includes("a")) {
+    //     newTitles.push(titleName[i])
+    //   }
+    // }
   return (
     <>
       <div className="flex h-screen w-full max-w-2xl flex-col overflow-scroll pt-2 ">
@@ -150,11 +157,12 @@ export default async function Home({
           <SearchInput />
           <NewButton />
           
-          {titles.filter((title) => title.username === username).map(e => (
+          {/* {titles.filter((title) => title.username === username).map(e => (
             <p key={e.id}></p>
-          ))}
+          ))} */}
         </div>
         <Separator />
+
         {titles.map((title) => (
           <Title
             key={title.id}
