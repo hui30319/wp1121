@@ -41,7 +41,7 @@ const AuthLayout = () => {
     if (location.pathname === '/login') {
       login(username, password);
       /* Replace the above line with the following line if you want to test other TODOs in this hackathon. */
-      login('test', '123');
+      // login('test', '123');
       /* Warning: Remember to change it back if you want to test the login functionality. */
     } else {
       /* TODO 1.5: Ensure User Registration Functions Properly (8%) */
@@ -161,6 +161,8 @@ const AuthLayout = () => {
                 type="password"
                 name="confirm-password"
                 autoComplete="new-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder='Confirm Password'
               />
               {/* End of TODO 1.5 */}
